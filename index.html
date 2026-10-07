@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <p class="subtitle">Calculate your Body Mass Index quickly</p>
+
+    <div class="unit-toggle">
+      <button id="btnMetric" class="active" onclick="setUnit('metric')">Metric (cm, kg)</button>
+      <button id="btnImperial" onclick="setUnit('imperial')">Imperial (in, lbs)</button>
+    </div>
+
+    <form id="bmiForm" onsubmit="calculateBMI(event)">
+      <div class="input-group">
+        <label for="height">Height</label>
+        <div class="input-wrapper">
+          <input type="number" id="height" step="any" placeholder="175" required />
+          <span class="unit-label" id="heightUnit">cm</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="weight">Weight</label>
+        <div class="input-wrapper">
+          <input type="number" id="weight" step="any" placeholder="70" required />
+          <span class="unit-label" id="weightUnit">kg</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-calc">Calculate</button>
+    </form>
+
+    <div id="resultCard" class="result-card">
+      <div class="result-title">Your BMI</div>
+      <div id="bmiValue" class="bmi-value">--</div>
+      <div id="bmiStatus" class="bmi-status">--</div>
+      <div id="bmiDesc" class="bmi-desc">--</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
